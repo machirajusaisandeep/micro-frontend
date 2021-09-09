@@ -1,0 +1,25 @@
+.core-app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.angular-app-wrap {
+  border: 1px solid;
+  height: 75vh;
+  width: 75%;
+  position: relative;
+}
+.jquery-app-wrap {
+  border: 1px solid;
+  height: 75vh;
+  width: 24%;
+  position: relative;
+}
+.core-app-bottom {
+  border: 1px solid;
+  height: 20vh;
+  margin: 10px 0;
+}
+iframe {
+  border: 0;
+}
