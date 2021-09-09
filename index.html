@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core App JavaScript</title>
     <link href="style.css" rel="stylesheet">
+   
 </head>
 <body>
    <section class="core-app-top">
     <div class="angular-app-wrap">
-
+        <script src="angular-micro-app/dist/main.js"></script>
+        <script src="angular-micro-app/dist/polyfills.js"></script>
     </div>
     <div class="jquery-app-wrap">
         <iframe src="http://127.0.0.1:5500/jquery-micro-app/index.html"></iframe>
@@ -32,6 +34,15 @@
                date: "20-6-1998"
            }
        ]))
+     setTimeout(()=>{
+    const script = document.createElement('script');
+    script.src ="angular-micro-app/dist/main.js";
+    const content = document.querySelector(".angular-app-wrap");
+    content.appendChild(script);
+    const element = document.createElement("angular-micro-app");
+    content.appendChild(element)
+     },500)
    </script>
+  
 </body>
 </html>
