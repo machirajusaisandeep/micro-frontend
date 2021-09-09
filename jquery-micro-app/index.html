@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery Micro App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        div,
+        p {
+            width: 100%;
+        }
+
+        .jquery-app-watchlist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .jquery-app-watchlist-card {
+            display: flex;
+            justify-content: space-evenly;
+            min-height: 40px;
+            border: 1px solid;
+            align-items: center;
+            margin-top: 10px;
+
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 8px 0;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="jquery-app-watchlist">
+        <p class="section-title">Watchlist</p>
+        <div class="jquery-app-watchlist-card-wrap" id="watchlist">
+
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        var watchlist = JSON.parse(localStorage.getItem('movieList'));
+        window.addEventListener('storage', function () {
+            console.log(localStorage.getItem('watchlist'));
+            watchlist = JSON.parse(localStorage.getItem('movieList'));
+        })
+        $(document).ready(function () {
+            if (watchlist.length > 0) {
+                for (let i = 0; i < watchlist.length; i++) {
+                    $("#watchlist").append(` <div class="jquery-app-watchlist-card">
+                <span>${i+1}</span>
+                <span>${watchlist[i].movie}</span>
+                <span>${watchlist[i].date}</span>
+            </div>`)
+                }
+            }
+        })
+    </script>
 </body>
+
 </html>
