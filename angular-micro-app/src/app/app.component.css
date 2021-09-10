@@ -5,6 +5,8 @@
     justify-content: space-evenly;
 }
 .angular-app-movie h2{
+    font-size: 2rem;
+    margin: 8px 0;
     text-align: center;
 }
 .angular-app-movie-list{

@@ -39,7 +39,7 @@
             text-align: center;
         }
         .jquery-logo{
-            width: 140px;
+            width: 100px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -50,7 +50,7 @@
 
 <body>
     <div class="jquery-app-watchlist">
-        <p class="section-title">Watchlist</p>
+        <h2 class="section-title">Watchlist</h2>
         <div class="jquery-app-watchlist-card-wrap" id="watchlist">
 
        
@@ -59,13 +59,15 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        var watchlist = JSON.parse(localStorage.getItem('movieList'));
+        var watchlist = JSON.parse(localStorage.getItem('watchList'));
         window.addEventListener('storage', function () {
-            console.log(localStorage.getItem('watchlist'));
-            watchlist = JSON.parse(localStorage.getItem('movieList'));
+            console.log(localStorage.getItem('watchList'),"watchList");
+            watchlist = JSON.parse(localStorage.getItem('watchList'));
+            addMoviesFromLocal()
         })
-        $(document).ready(function () {
+        function addMoviesFromLocal(){
             if (watchlist.length > 0) {
+                $("#watchlist").html("");
                 for (let i = 0; i <5; i++) {
                     $("#watchlist").append(` <div class="jquery-app-watchlist-card" id="${watchlist[i].id}">
                 <span>${i+1}</span>
@@ -73,7 +75,12 @@
                 <span>${watchlist[i].release_date}</span>
             </div>`)
                 }
+            }else{
+                $("#watchlist").html("<span>No Movies Watch list add some</span>");
             }
+        }
+        $(document).ready(function () {
+            addMoviesFromLocal()
         })
     </script>
 </body>
