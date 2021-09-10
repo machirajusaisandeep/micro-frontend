@@ -66,11 +66,11 @@
         })
         $(document).ready(function () {
             if (watchlist.length > 0) {
-                for (let i = 0; i < watchlist.length; i++) {
-                    $("#watchlist").append(` <div class="jquery-app-watchlist-card">
+                for (let i = 0; i <5; i++) {
+                    $("#watchlist").append(` <div class="jquery-app-watchlist-card" id="${watchlist[i].id}">
                 <span>${i+1}</span>
-                <span>${watchlist[i].movie}</span>
-                <span>${watchlist[i].date}</span>
+                <span>${watchlist[i].title}</span>
+                <span>${watchlist[i].release_date}</span>
             </div>`)
                 }
             }

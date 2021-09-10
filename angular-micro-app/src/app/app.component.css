@@ -1,0 +1,29 @@
+.angular-app-movie{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.angular-app-movie h2{
+    text-align: center;
+}
+.angular-app-movie-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-height: 70vh;
+    overflow: auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.angular-app-movie-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    padding: 10px;
+}
+.angular-app-movie-card img{
+    width: 150px;
+}

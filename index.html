@@ -23,17 +23,10 @@
 
     </div>
    </section>
+   <script src="movies.js"></script>
    <script>
-       localStorage.setItem("movieList",JSON.stringify([
-           {
-               movie:"Avengers",
-               date: "20-5-1998"
-           },
-           {
-               movie:"Avengers",
-               date: "20-6-1998"
-           }
-       ]))
+    localStorage.setItem("movieList",JSON.stringify(Movies_List))
+    localStorage.setItem("watchList",JSON.stringify([]))
      setTimeout(()=>{
     const script = document.createElement('script');
     script.src ="angular-micro-app/dist/main.js";

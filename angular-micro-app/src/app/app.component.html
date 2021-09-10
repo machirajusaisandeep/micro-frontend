@@ -1,1 +1,11 @@
-angular app
+<section class="angular-app-movie">
+  <h2>Avengers Movie List</h2>
+    <div class="angular-app-movie-list">
+      <div *ngFor="let movie of movieList"  class="angular-app-movie-card">
+          <img src="{{movie.image}}">
+          <span>{{movie.title}}</span>
+          <span>{{movie.release_date}}</span>
+          <button (click)="onAddToWatchList(movie)">Add to watchlist</button>
+      </div>
+    </div>
+</section>
